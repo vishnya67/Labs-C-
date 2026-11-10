@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    double a, b, c;
+    cin >> a >> b >> c;
+
+    double maxNum = a;
+    double minNum = a;
+
+    if (abs(b) > abs(maxNum))
+        maxNum = b;
+    if (abs(c) > abs(maxNum))
+        maxNum = c;
+
+    if (abs(b) < abs(minNum))
+        minNum = b;
+    if (abs(c) < abs(minNum))
+        minNum = c;
+
+    double result = pow(maxNum * minNum, 2);
+
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+    cout << "c = " << c << endl;
+    cout << "maxNum = " << maxNum << endl;
+    cout << "minNum = " << minNum << endl;
+    cout << "result = " << result << endl;
+
+    return 0;
+}
