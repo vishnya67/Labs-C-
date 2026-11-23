@@ -1,0 +1,36 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введіть n: ";
+    cin >> n;
+
+    int limit = min(n, 999);
+    bool found = false;
+
+    cout << "Підходящі числа: ";
+    for (int num = 100; num <= limit; ++num) {
+        int hundreds = num / 100;
+        int tens = (num / 10) % 10;
+        int ones = num % 10;
+
+        int sumCubes = hundreds * hundreds * hundreds +
+                       tens * tens * tens +
+                       ones * ones * ones;
+
+        if (sumCubes == num) {
+            cout << num << " ";
+            found = true;
+        }
+    }
+
+    if (!found) {
+        cout << "таких чисел немає";
+    }
+    cout << endl;
+
+    return 0;
+}
