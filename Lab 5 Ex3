@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int r = 190;
+    bool found = false;
+
+    cout << "Варіанти прокладання колії довжиною " << r << " м:\n";
+    for (int a = 0; a * 8 <= r; ++a) {
+        int rem = r - a * 8;
+        if (rem % 10 == 0) {
+            int b = rem / 10;
+            cout << "Рейок по 8 м: " << a << ", рейок по 10 м: " << b << "\n";
+            found = true;
+        }
+    }
+
+    if (!found) {
+        cout << "Підходящих варіантів немає.\n";
+    }
+
+    return 0;
+}
