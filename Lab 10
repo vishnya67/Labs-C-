@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main() {
+    string s;
+    int count = 0;
+    bool inWord = false;
+
+    cout << "Vvedit rechennya: ";
+    getline(cin, s);
+
+    for (int i = 0; i < s.length(); i++) {
+        if (!isspace(s[i])) {
+            if (!inWord) {
+                count++;
+                inWord = true;
+            }
+        } else {
+            inWord = false;
+        }
+    }
+
+    cout << "Kilkist sliv: " << count << endl;
+
+    return 0;
+}
