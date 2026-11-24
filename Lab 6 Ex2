@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    double a[100], max, dob;
+
+    cout << "Vvedit kilkist elementiv: ";
+    cin >> n;
+
+    if (n < 5 || n > 100) {
+        cout << "Pomilka! Kilkist elementiv povinna buty vid 5 do 100.";
+        return 0;
+    }
+
+    cout << "Vvedit elementi masivu:\n";
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    max = a[0];
+
+    for (int i = 1; i < n; i++) {
+        if (a[i] > max) {
+            max = a[i];
+        }
+    }
+
+    dob = max * a[4];
+
+    cout << "Maksimalniy element = " << max << endl;
+    cout << "Pyatiy element = " << a[4] << endl;
+    cout << "Dobutok = " << dob << endl;
+
+    return 0;
+}
