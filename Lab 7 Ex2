@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m;
+    int a[100][100];
+
+    cout << "Vvedit kilkist ryadkiv i stovpciv: ";
+    cin >> n >> m;
+
+    if (n < 1 || m < 1 || n > 100 || m > 100) {
+        cout << "Pomilka!";
+        return 0;
+    }
+
+    cout << "Vvedit elementi masivu:\n";
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> a[i][j];
+        }
+    }
+
+    cout << "Stovpchiki, v yakih tilki odin neparniy element: ";
+
+    bool found = false;
+
+    for (int j = 0; j < m; j++) {
+        int count = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (a[i][j] % 2 != 0) {
+                count++;
+            }
+        }
+
+        if (count == 1) {
+            cout << j + 1 << " ";
+            found = true;
+        }
+    }
+
+    if (!found) {
+        cout << "Takih stovpciv nemae.";
+    }
+
+    cout << endl;
+
+    return 0;
+}
