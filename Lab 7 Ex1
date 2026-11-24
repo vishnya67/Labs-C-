@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m;
+    double a[100][100], sum = 0, ser, rizn;
+
+    cout << "Vvedit kilkist ryadkiv i stovpciv: ";
+    cin >> n >> m;
+
+    if (n < 2 || m < 3 || n > 100 || m > 100) {
+        cout << "Pomilka!";
+        return 0;
+    }
+
+    cout << "Vvedit elementi masivu:\n";
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> a[i][j];
+            sum += a[i][j];
+        }
+    }
+
+    ser = sum / (n * m);
+    rizn = ser - a[1][2];
+
+    cout << "Serednye arifmetichne = " << ser << endl;
+    cout << "Drugiy element tretyogo stovpcya = " << a[1][2] << endl;
+    cout << "Riznitsya = " << rizn << endl;
+
+    return 0;
+}
