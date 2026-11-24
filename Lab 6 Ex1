@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    double a[100], sum = 0;
+
+    cout << "Vvedit kilkist elementiv: ";
+    cin >> n;
+
+    cout << "Vvedit elementi masivu:\n";
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    cout << "Elementi na neparnih miscah: ";
+    for (int i = 0; i < n; i += 2) {
+        cout << a[i] << " ";
+        sum += a[i];
+    }
+
+    cout << "\nSuma = " << sum << endl;
+
+    return 0;
+}
